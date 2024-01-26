@@ -1,25 +1,40 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 import "./Artist.css";
 
-export default function Artist() {
+export default function Artist({searchInput}) {
+    const [artists, setArtists] = useState([])
+    
+    useEffect(() => {
+        const url = `http://localhost:3000/artists?name_like=${searchInput}`
+    
+        fetch(url)
+            .then(response => response.json())
+            .then(res => setArtists(res))
+    }, [searchInput])
+
+    console.log(artists)
+
     return (
         <div id="result-artist">
             <div className="grid-container">
-                <div className="artist-card" id="">
+                {artists.map(artist => (
+                    <div className="artist-card">
                     <div className="card-img">
-                        <img id="artist-img" className="artist-img" />
+                        <img id="artist-img" className="artist-img" src={artist.urlImg} />
                         <div className="play">
                             <span className="fa fa-solid fa-play"></span>
                         </div>
                     </div>
                     <div className="card-text">
-                        <a title="Foo Fighters" className="vst" href="">
-                            <span className="artist-name" id="artist-name"></span>
+                        <a title={artist.name} className="artist-link" href="">
+                            <span className="artist-name" id="artist-name">{artist.name}</span>
                             <span className="artist-categorie">Artista</span>
                         </a>
                     </div>
                 </div>
+                ))}
+                
             </div>
         </div>
     )

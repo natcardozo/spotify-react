@@ -1,14 +1,7 @@
-.artist {
-    --column-count: 5;
-    --grid-gap: 24px;
-    --min-container-width: 372px;
-}
-
 .grid-container {
-    grid-gap: var(--grid-gap);
-    display: grid;
-    grid-template-columns: repeat(var(--column-count), minmax(0, 1fr));
-    min-width: var(--min-container-width);
+    display: flex;
+    gap: 16px;
+    overflow: auto;
 }
 
 .artist-card {
@@ -54,9 +47,12 @@
 }
 
 .card-text a {
-    display: inline-block;
+    color: #b3b3b3;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
     max-width: 100%;
-    vertical-align: middle;
+    justify-content: center;
 }
 
 .artist-name {

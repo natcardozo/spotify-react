@@ -40,7 +40,7 @@ const Main = ({searchInput}) => {
         <section className="main-body">
             <h2 className="main-body__title" id="greeting">{getGreeting()}</h2>
             {searchInput ?
-                <Artist /> : 
+                <Artist searchInput={searchInput} /> : 
                 <div className="main-body__content" id="playlists">
                     <h3 className="content__title">Navegue por todas as seções</h3>
                     <div className="content__cards">
