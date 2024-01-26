@@ -5,7 +5,7 @@ import { faChevronLeft, faChevronRight, faSearch } from '@fortawesome/free-solid
 
 import "./Header.css"
 
-export default function Header() {
+export default function Header({searchInput, setSearchInput}) {
   return (
     <nav className="header">
         <div className="header__navigation">
@@ -18,7 +18,15 @@ export default function Header() {
         </div>
         <div className="header__search">
             <FontAwesomeIcon icon={faSearch} />
-            <input id="search-input" className="search__input" type="text" maxLength="800" placeholder="O que você quer ouvir?" />
+            <input 
+                id="search-input" 
+                className="search__input" 
+                type="text" 
+                maxLength="800" 
+                placeholder="O que você quer ouvir?" 
+                value={searchInput} 
+                onChange={(e) => setSearchInput(e.target.value)}
+            />
         </div>
         <div className="header__login">
             <button className="subscribe">Inscreva-se</button>

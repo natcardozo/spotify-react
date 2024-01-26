@@ -4,10 +4,6 @@
     --min-container-width: 372px;
 }
 
-.hidden {
-    display: none;
-}
-
 .grid-container {
     grid-gap: var(--grid-gap);
     display: grid;

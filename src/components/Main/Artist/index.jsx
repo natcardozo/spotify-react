@@ -4,7 +4,7 @@ import "./Artist.css";
 
 export default function Artist() {
     return (
-        <div id="result-artist" className="hidden">
+        <div id="result-artist">
             <div className="grid-container">
                 <div className="artist-card" id="">
                     <div className="card-img">

@@ -21,7 +21,7 @@ import image15 from "../../assets/playlist/15.jpeg";
 import "./Main.css"
 import Artist from "./Artist";
 
-const Main = () => {
+const Main = ({searchInput}) => {
     const getGreeting = () => {
         const localTime = new Date();
 
@@ -39,27 +39,30 @@ const Main = () => {
     return (
         <section className="main-body">
             <h2 className="main-body__title" id="greeting">{getGreeting()}</h2>
-            <div className="main-body__content" id="playlists">
-                <h3 className="content__title">Navegue por todas as seções</h3>
-                <div className="content__cards">
-                    <Card playlist="Boas festas" image={image1} cardClass="card1" />
-                    <Card playlist="Feitos para você" image={image2} cardClass="card2" />
-                    <Card playlist="Lançamentos" image={image3} cardClass="card3" />
-                    <Card playlist="Creators" image={image4} cardClass="card4" />
-                    <Card playlist="Para treinar" image={image5} cardClass="card5" />
-                    <Card playlist="Podcasts" image={image6} cardClass="card6" />
-                    <Card playlist="Sertanejo" image={image7} cardClass="card7" />
-                    <Card playlist="Samba e pagode" image={image8} cardClass="card8" />
-                    <Card playlist="Funk" image={image9} cardClass="card9" />
-                    <Card playlist="MPB" image={image10} cardClass="card10" />
-                    <Card playlist="Rock" image={image11} cardClass="card11" />
-                    <Card playlist="Hip hop" image={image12} cardClass="card12" />
-                    <Card playlist="Indie" image={image13} cardClass="card13" />
-                    <Card playlist="Relax" image={image14} cardClass="card14" />
-                    <Card playlist="Música latina" image={image15} cardClass="card15" />
+            {searchInput ?
+                <Artist /> : 
+                <div className="main-body__content" id="playlists">
+                    <h3 className="content__title">Navegue por todas as seções</h3>
+                    <div className="content__cards">
+                        <Card playlist="Boas festas" image={image1} cardClass="card1" />
+                        <Card playlist="Feitos para você" image={image2} cardClass="card2" />
+                        <Card playlist="Lançamentos" image={image3} cardClass="card3" />
+                        <Card playlist="Creators" image={image4} cardClass="card4" />
+                        <Card playlist="Para treinar" image={image5} cardClass="card5" />
+                        <Card playlist="Podcasts" image={image6} cardClass="card6" />
+                        <Card playlist="Sertanejo" image={image7} cardClass="card7" />
+                        <Card playlist="Samba e pagode" image={image8} cardClass="card8" />
+                        <Card playlist="Funk" image={image9} cardClass="card9" />
+                        <Card playlist="MPB" image={image10} cardClass="card10" />
+                        <Card playlist="Rock" image={image11} cardClass="card11" />
+                        <Card playlist="Hip hop" image={image12} cardClass="card12" />
+                        <Card playlist="Indie" image={image13} cardClass="card13" />
+                        <Card playlist="Relax" image={image14} cardClass="card14" />
+                        <Card playlist="Música latina" image={image15} cardClass="card15" />
+                    </div>
                 </div>
-            </div>
-            <Artist />
+            }
+            
         </section>
     )
 }
