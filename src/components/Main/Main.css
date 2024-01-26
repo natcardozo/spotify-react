@@ -1,0 +1,51 @@
+.main-body {
+    background-color: #121212;
+    border-radius: 8px;
+    padding: 16px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.main-body__title {
+    font-size: 32px;
+    color: #f2f2f2;
+    margin-bottom: 40px;
+}
+
+.content__title {
+    margin-bottom: 16px;
+    color: #f2f2f2;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.content__cards {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    overflow: auto;
+    max-height: 55vh;
+    padding-right: 8px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #121212;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #b3b3b3;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+  border-radius: 5px;
+}

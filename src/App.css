@@ -1,0 +1,16 @@
+.body {
+  background-color: black;
+  color: #b3b3b3;
+  font-family: "DM Sans", sans-serif;
+}
+
+.main-container {
+  max-width: calc(100vw - 370px);
+  height: calc(100vh - 100px);
+  margin-left: 370px;
+  margin-right: 12px;
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
